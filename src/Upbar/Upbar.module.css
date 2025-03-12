@@ -1,0 +1,165 @@
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  background-color: rgb(12, 49, 80);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.lists {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  animation: slideUp 1s ease forwards;
+}
+
+.navbars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.upbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.upbar ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.upbar ul li a:hover {
+  color: cyan;
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.links:hover {
+  color: cyan;
+}
+
+.header {
+  animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(+100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Media Query for mobile responsiveness */
+@media (max-width: 768px) {
+  .navbars {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lists {
+    flex-direction: column;
+    gap: 15px;
+    display: none; /* Hide menu by default */
+    width: 100%;
+    text-align: center;
+  }
+
+  .lists.active {
+    display: flex; /* Show the menu when active */
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 1100;
+    margin-left: 10px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: 0.3s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 8px;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .upbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .upbar ul li a {
+    padding: 8px 12px;
+  }
+}
+
+/* For even smaller screens like mobile phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+
+  .lists {
+    gap: 10px;
+  }
+
+  .upbar ul li a {
+    padding: 6px 10px;
+  }
+
+  .header {
+    font-size: 1.2rem;
+  }
+}

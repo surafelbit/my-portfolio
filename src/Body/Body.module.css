@@ -1,0 +1,223 @@
+.bodys {
+  /* background-color: red;
+  height: 45px; */
+}
+.wrapper {
+  display: flex;
+}
+.texts {
+  background-color: rgb(168, 149, 124);
+  background-color: #142642;
+  flex: 6;
+  padding: 120px;
+  padding-top: 60px;
+  /* justify-content: flex-start; */
+  /* height: 45px; */
+  /* justify-content: flex-end; */
+  text-align: left;
+}
+.texts p {
+  justify-content: flex-start;
+  justify-content: flex-end;
+}
+.images {
+  background-color: rgb(49, 47, 43);
+  background-color: #142642;
+  flex: 6;
+  flex-direction: column;
+  /* align-items: center;
+  align-items: center; */
+  align-content: center;
+  /* justify-content: center; */
+  /* height: 30px; */
+}
+.texts h2 h3 h4 h5 h6 {
+  margin: 0;
+  padding: 0;
+}
+.icons {
+  /* width: 15px;
+  height: 15px; */
+  display: flex;
+  /* align-items: center;
+  align-content: center; */
+  /* align-content: space-between; */
+  /* justify-content: center; */
+  justify-content: space-around;
+}
+.paragraph {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: 3rem;
+  transition: all 4s ease;
+  animation: slideLeft 1s ease forwards;
+}
+.paragraphs {
+  color: white;
+  animation: slideRight 1s ease forwards;
+}
+.svgicons {
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px; /* Ensure width and height are equal */
+  height: 40px;
+}
+
+.svgicons path {
+  transition: fill 3s ease;
+  border-color: cyan;
+}
+
+.svgicons:hover path {
+  fill: cyan;
+  border-color: cyan;
+}
+.profileImg {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 5px;
+  animation: slideUp 1s ease-in-out forwards;
+  width: 240px; /* Ensure width and height are equal */
+  height: 240px;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #9400d3, 0 0 40px #4b0082,
+    0 0 60px #00ffff;
+  /* box-shadow: 0 0 10px #ffffff, 0 0 60px #9400d3, 0 0 120px #4b0082,
+    0 0 60px #00ffff; */
+  object-fit: cover;
+}
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 25px 20px #9400d3, 0 0 30px 20px #4b0082,
+      0 0 40px 30px #00ffff;
+  }
+  50% {
+    box-shadow: 0 0 25px 20px #ff00ff, 0 0 30px 20px #9400d3,
+      0 0 40px 30px #4b0082;
+  }
+  100% {
+    box-shadow: 0 0 25px 20px #9400d3, 0 0 30px 20px #4b0082,
+      0 0 40px 30px #00ffff;
+  }
+}
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 20px 15px #1100ff, 0 0 20px 15px #605599,
+      0 0 50px 40px #1e1920;
+  }
+  50% {
+    box-shadow: 0 0 40px 27px #1100ff, 0 0 40px 27px #605599,
+      0 0 50px 40px #1e1920;
+  }
+  100% {
+    box-shadow: 0 0 60px 50px #1100ff, 0 0 60px 50px #605599,
+      0 0 50px 40px #1e1920;
+  }
+}
+
+.profileImg {
+  animation: slideUp 2s ease forwards, glowing 4s infinite alternate;
+}
+.buttonsdiv {
+  margin: 30px;
+}
+.buttons {
+  box-shadow: 2px 2px 2px #00ffff;
+  box-shadow: 10px 5px 15px 3px red;
+  border: none;
+  padding: 10px;
+  background-color: rgba(20, 209, 200, 1);
+  border-radius: 15px;
+  box-shadow: 0 8px 10px rgba(20, 209, 200, 0.5),
+    /* Bottom shadow */ 0 -8px 10px rgba(20, 209, 200, 0.5),
+    /* Top shadow */ 8px 0 10px rgba(20, 209, 200, 0.5),
+    /* Right shadow */ -8px 0 10px rgba(20, 209, 200, 0.5); /* Left shadow */
+
+  /* padding: 10px; */
+}
+.highlight {
+  color: #00ffff;
+}
+.profileWrapper {
+  padding-bottom: 150px;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .texts {
+    padding: 30px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .profileImg {
+    max-width: 180px;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+
+  .buttons {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .texts {
+    padding: 20px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+  }
+
+  .profileImg {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .buttons {
+    font-size: 12px;
+  }
+}
